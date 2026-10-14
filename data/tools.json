@@ -1,0 +1,335 @@
+{
+  "keyword": "batch image generation api",
+  "title": "Batch Image Generation API Options: 8 Providers on Batch and Webhooks",
+  "lastChecked": "2026-10-14",
+  "capabilityChecks": [
+    {
+      "key": "manyImagesInOneRequest",
+      "label": "Many images in one request"
+    },
+    {
+      "key": "batchDiscountStated",
+      "label": "Batch discount stated"
+    },
+    {
+      "key": "asyncJobAndPolling",
+      "label": "Async job and polling"
+    },
+    {
+      "key": "completionWebhook",
+      "label": "Completion webhook"
+    },
+    {
+      "key": "idempotencyKey",
+      "label": "Idempotency key"
+    },
+    {
+      "key": "resultRetentionStated",
+      "label": "Result retention stated"
+    },
+    {
+      "key": "officialSdk",
+      "label": "Official SDK"
+    }
+  ],
+  "tools": [
+    {
+      "n": 1,
+      "name": "Wireflow",
+      "tagline": "Best overall for running a multi-step batch from one request",
+      "homepage": "https://www.wireflow.ai/",
+      "docs": "https://www.wireflow.ai/docs/api/overview",
+      "pricing": "https://www.wireflow.ai/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "100+ image, video and audio models as nodes",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": null,
+      "quickstart": [
+        {
+          "label": "Run a saved workflow from code: send its input values to this endpoint with an API key, then poll the execution or add a webhook block. The request format is in the API reference linked under Docs.",
+          "lang": "text",
+          "code": "POST /api/v1/workflows/{id}/run"
+        }
+      ],
+      "moneyPage": "https://www.wireflow.ai/node-based-image-generation",
+      "moneyPageLabel": "Wireflow node based image generation page",
+      "capabilities": {
+        "manyImagesInOneRequest": true,
+        "batchDiscountStated": null,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": true,
+        "resultRetentionStated": null,
+        "officialSdk": false
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 2,
+      "name": "OpenAI API",
+      "tagline": "Best for large batches that can wait a day",
+      "homepage": "https://openai.com/api/",
+      "docs": "https://developers.openai.com/api/docs/guides/batch",
+      "pricing": "https://developers.openai.com/api/docs/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Image generation and edits in the Batch API",
+      "freeTier": "unverified",
+      "repo": "openai/openai-python",
+      "note": "The linked repository is the official Python SDK. The Batch API is a hosted service.",
+      "quickstart": [
+        {
+          "label": "Create a batch from an uploaded file, from the OpenAI Batch guide. The guide's example targets /v1/chat/completions. For images, set the endpoint to /v1/images/generations or /v1/images/edits, which the guide lists as supported.",
+          "lang": "bash",
+          "code": "curl https://api.openai.com/v1/batches \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"input_file_id\": \"file-abc123\",\n    \"endpoint\": \"/v1/chat/completions\",\n    \"completion_window\": \"24h\"\n  }'"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": true,
+        "batchDiscountStated": true,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": null,
+        "resultRetentionStated": true,
+        "officialSdk": true
+      },
+      "live": {
+        "stars": 31840,
+        "lastPush": "2026-10-14T02:58:12Z",
+        "latestRelease": "v3.29.0",
+        "latestReleaseDate": "2026-10-11",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "n": 3,
+      "name": "Google Gemini API",
+      "tagline": "Best for image batches on Google models",
+      "homepage": "https://ai.google.dev/gemini-api/docs",
+      "docs": "https://ai.google.dev/gemini-api/docs/batch-api",
+      "pricing": "https://ai.google.dev/gemini-api/docs/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Gemini image generation in batch jobs",
+      "freeTier": "yes",
+      "repo": "googleapis/python-genai",
+      "note": "The linked repository is the Google GenAI SDK for Python. The pricing page describes a free tier with limited access to certain models. Check that page for whether batch jobs are covered.",
+      "quickstart": [
+        {
+          "label": "Create a batch job with inline requests, from the Gemini Batch API guide. The guide's image example adds a responseModalities setting to each request and recommends a JSONL file for image generation.",
+          "lang": "bash",
+          "code": "curl https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:batchGenerateContent \\\n-H \"x-goog-api-key: $GEMINI_API_KEY\" \\\n-X POST \\\n-H \"Content-Type:application/json\" \\\n-d '{\n    \"batch\": {\n        \"display_name\": \"my-batch-requests\",\n        \"input_config\": {\n            \"requests\": {\n                \"requests\": [\n                    {\n                        \"request\": {\"contents\": [{\"parts\": [{\"text\": \"Describe the process of photosynthesis.\"}]}]},\n                        \"metadata\": {\n                            \"key\": \"request-1\"\n                        }\n                    },\n                    {\n                        \"request\": {\"contents\": [{\"parts\": [{\"text\": \"Describe the process of photosynthesis.\"}]}]},\n                        \"metadata\": {\n                            \"key\": \"request-2\"\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}'"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": true,
+        "batchDiscountStated": true,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": false,
+        "resultRetentionStated": true,
+        "officialSdk": true
+      },
+      "live": {
+        "stars": 4021,
+        "lastPush": "2026-10-14T02:00:16Z",
+        "latestRelease": "v2.30.1",
+        "latestReleaseDate": "2026-10-13",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "n": 4,
+      "name": "Runware",
+      "tagline": "Best for many image tasks in one request",
+      "homepage": "https://runware.ai/",
+      "docs": "https://runware.ai/docs/models-api/introduction",
+      "pricing": "https://runware.ai/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Image, video, audio, LLM and 3D models",
+      "freeTier": "unverified",
+      "repo": "runware/runware-python",
+      "note": "The linked repository is the official Python SDK. A TypeScript SDK is documented as well.",
+      "quickstart": [
+        {
+          "label": "Send one image task, from the Runware Models API introduction. The request body is an array, so more task objects can go in the same call.",
+          "lang": "bash",
+          "code": "curl https://api.runware.ai/v1 \\\n  -H \"Authorization: Bearer $RUNWARE_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '[\n    {\n      \"taskType\": \"imageInference\",\n      \"taskUUID\": \"a770f077-f413-47de-9dac-be0b26a35da6\",\n      \"model\": \"xai:grok-imagine@image-quality\",\n      \"positivePrompt\": \"A golden retriever on a park bench, cinematic lighting\",\n      \"width\": 1024,\n      \"height\": 1024\n    }\n  ]'"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": true,
+        "batchDiscountStated": null,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": null,
+        "resultRetentionStated": true,
+        "officialSdk": true
+      },
+      "live": {
+        "stars": 3,
+        "lastPush": "2026-10-12T23:44:01Z",
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "n": 5,
+      "name": "fal",
+      "tagline": "Best for a per-image queue across many hosted models",
+      "homepage": "https://fal.ai/",
+      "docs": "https://fal.ai/docs/documentation/model-apis/inference/queue",
+      "pricing": "https://fal.ai/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "1,000+ image, video, audio and 3D models",
+      "freeTier": "unverified",
+      "repo": "fal-ai/fal-js",
+      "note": "The linked repository is the official JavaScript client. The Python client lives in fal-ai/fal.",
+      "quickstart": [
+        {
+          "label": "Submit a queued request with a webhook URL, from the fal webhooks docs.",
+          "lang": "bash",
+          "code": "curl --request POST \\\n  --url 'https://queue.fal.run/fal-ai/flux/dev?fal_webhook=https://url.to.your.app/api/fal/webhook' \\\n  --header \"Authorization: Key $FAL_KEY\" \\\n  --header 'Content-Type: application/json' \\\n  --data '{\n  \"prompt\": \"Photo of a cute dog\"\n}'"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": null,
+        "batchDiscountStated": null,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": null,
+        "resultRetentionStated": true,
+        "officialSdk": true
+      },
+      "live": {
+        "stars": 187,
+        "lastPush": "2026-10-13T14:12:28Z",
+        "latestRelease": "client-v1.10.1",
+        "latestReleaseDate": "2026-05-04",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "n": 6,
+      "name": "Replicate",
+      "tagline": "Best for a per-image queue over open and official models",
+      "homepage": "https://replicate.com/",
+      "docs": "https://replicate.com/docs/topics/predictions/lifecycle",
+      "pricing": "https://replicate.com/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Open and official models, plus your own",
+      "freeTier": "unverified",
+      "repo": "replicate/replicate-python",
+      "note": "The linked repository is the official Python client. JavaScript, Swift and Go clients are listed as well.",
+      "quickstart": [
+        {
+          "label": "Create a prediction with a completion webhook, from Replicate's create a prediction page.",
+          "lang": "bash",
+          "code": "curl -s -X POST \\\n  -H \"Authorization: Bearer $REPLICATE_API_TOKEN\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"version\": \"5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa\", \"input\": {\"text\": \"Alice\"}, \"webhook\": \"https://my.server.com/webhooks/replicate\", \"webhook_events_filter\": [\"completed\"]}' \\\n  https://api.replicate.com/v1/predictions"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": null,
+        "batchDiscountStated": null,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": null,
+        "resultRetentionStated": true,
+        "officialSdk": true
+      },
+      "live": {
+        "stars": 917,
+        "lastPush": "2025-08-26T17:18:17Z",
+        "latestRelease": "1.0.7",
+        "latestReleaseDate": "2025-05-27",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "n": 7,
+      "name": "Black Forest Labs API",
+      "tagline": "Best for calling FLUX models directly",
+      "homepage": "https://docs.bfl.ai/quick_start/introduction",
+      "docs": "https://docs.bfl.ai/api_integration/integration_guidelines",
+      "pricing": "https://docs.bfl.ai/quick_start/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "FLUX image and video models",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "No official SDK repository is named in the docs index, so none is listed in the data table.",
+      "quickstart": [
+        {
+          "label": "Submit a request and read the polling URL, from the Black Forest Labs integration guide. The guide then polls that URL until the status is Ready.",
+          "lang": "bash",
+          "code": "response=$(curl -X 'POST' \\\n  'https://api.bfl.ai/v1/flux-2-pro-preview' \\\n  -H 'accept: application/json' \\\n  -H \"x-key: ${BFL_API_KEY}\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"prompt\": \"A serene landscape with mountains\",\n    \"width\": 1440,\n    \"height\": 810\n  }')\n\nrequest_id=$(echo $response | jq -r .id)\npolling_url=$(echo $response | jq -r .polling_url)"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": null,
+        "batchDiscountStated": false,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": null,
+        "resultRetentionStated": true,
+        "officialSdk": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 8,
+      "name": "Leonardo AI",
+      "tagline": "Best for outputs that should stay hosted",
+      "homepage": "https://leonardo.ai/",
+      "docs": "https://docs.leonardo.ai/docs/getting-started",
+      "pricing": "https://docs.leonardo.ai/docs/payg-guide",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Image generation, including your own custom models",
+      "freeTier": "unverified",
+      "repo": "Leonardo-Interactive/leonardo-python-sdk",
+      "note": "The linked repository is the official Python SDK.",
+      "quickstart": [
+        {
+          "label": "Create a generation, from Leonardo's quick start guide. The response returns a generation ID to poll.",
+          "lang": "bash",
+          "code": "curl --request POST \\\n     --url https://cloud.leonardo.ai/api/rest/v1/generations \\\n     --header 'accept: application/json' \\\n     --header 'authorization: Bearer <YOUR_API_KEY>' \\\n     --header 'content-type: application/json' \\\n     --data '\n{\n  \"alchemy\": false,\n  \"height\": 1080,\n  \"modelId\": \"7b592283-e8a7-4c5a-9ba6-d18c31f258b9\",\n  \"contrast\": 3.5,\n  \"num_images\": 4,\n  \"styleUUID\": \"111dc692-d470-4eec-b791-3475abac4c46\",\n  \"prompt\": \"A serene watercolor painting of a mountain lake at sunrise\",\n  \"width\": 1920,\n  \"ultra\": false\n}\n'"
+        }
+      ],
+      "capabilities": {
+        "manyImagesInOneRequest": null,
+        "batchDiscountStated": null,
+        "asyncJobAndPolling": true,
+        "completionWebhook": true,
+        "idempotencyKey": null,
+        "resultRetentionStated": true,
+        "officialSdk": true
+      },
+      "live": {
+        "stars": 26,
+        "lastPush": "2026-08-04T00:43:49Z",
+        "latestRelease": "v7.0.0",
+        "latestReleaseDate": "2026-02-05",
+        "checkedAt": "2026-10-14"
+      }
+    }
+  ]
+}

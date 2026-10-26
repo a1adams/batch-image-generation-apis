@@ -16,7 +16,7 @@ The Wireflow team maintains this list, so read entry 1 with that in mind. [Wiref
 The tables below are generated from [`data/tools.json`](data/tools.json). Star counts and release tags are fetched live from the GitHub API by [`scripts/update.js`](scripts/update.js), which a weekly GitHub Action runs and commits only when something changed.
 
 <!-- LAST-CHECKED:START -->
-Live repository data last checked **2026-10-14** by [`scripts/update.js`](scripts/update.js), which runs weekly via GitHub Actions.
+Live repository data last checked **2026-10-26** by [`scripts/update.js`](scripts/update.js), which runs weekly via GitHub Actions.
 <!-- LAST-CHECKED:END -->
 
 Maintained by [a1adams](https://github.com/a1adams). Corrections are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -50,11 +50,11 @@ One row per tool, one column per thing people actually check before committing. 
 | Tool | REST API | Free tier | Model support | Pricing | Open-source SDK / MCP |
 |---|---|---|---|---|---|
 | **[Wireflow](#1-wireflow)** | Yes | [check](https://www.wireflow.ai/pricing) | 100+ image, video and audio models as nodes | [pricing](https://www.wireflow.ai/pricing) | n/a |
-| **[OpenAI API](#2-openai-api)** | Yes | [check](https://developers.openai.com/api/docs/pricing) | Image generation and edits in the Batch API | [pricing](https://developers.openai.com/api/docs/pricing) | [openai/openai-python](https://github.com/openai/openai-python), 31,840 ★, v3.29.0 |
-| **[Google Gemini API](#3-google-gemini-api)** | Yes | Yes | Gemini image generation in batch jobs | [pricing](https://ai.google.dev/gemini-api/docs/pricing) | [googleapis/python-genai](https://github.com/googleapis/python-genai), 4,021 ★, v2.30.1 |
-| **[Runware](#4-runware)** | Yes | [check](https://runware.ai/pricing) | Image, video, audio, LLM and 3D models | [pricing](https://runware.ai/pricing) | [runware/runware-python](https://github.com/runware/runware-python), 3 ★, pushed 2026-10-12 |
+| **[OpenAI API](#2-openai-api)** | Yes | [check](https://developers.openai.com/api/docs/pricing) | Image generation and edits in the Batch API | [pricing](https://developers.openai.com/api/docs/pricing) | [openai/openai-python](https://github.com/openai/openai-python), 31,955 ★, v3.37.0 |
+| **[Google Gemini API](#3-google-gemini-api)** | Yes | Yes | Gemini image generation in batch jobs | [pricing](https://ai.google.dev/gemini-api/docs/pricing) | [googleapis/python-genai](https://github.com/googleapis/python-genai), 4,047 ★, v2.33.0 |
+| **[Runware](#4-runware)** | Yes | [check](https://runware.ai/pricing) | Image, video, audio, LLM and 3D models | [pricing](https://runware.ai/pricing) | [runware/runware-python](https://github.com/runware/runware-python), 3 ★, pushed 2026-10-23 |
 | **[fal](#5-fal)** | Yes | [check](https://fal.ai/pricing) | 1,000+ image, video, audio and 3D models | [pricing](https://fal.ai/pricing) | [fal-ai/fal-js](https://github.com/fal-ai/fal-js), 187 ★, client-v1.10.1 |
-| **[Replicate](#6-replicate)** | Yes | [check](https://replicate.com/pricing) | Open and official models, plus your own | [pricing](https://replicate.com/pricing) | [replicate/replicate-python](https://github.com/replicate/replicate-python), 917 ★, 1.0.7 |
+| **[Replicate](#6-replicate)** | Yes | [check](https://replicate.com/pricing) | Open and official models, plus your own | [pricing](https://replicate.com/pricing) | [replicate/replicate-python](https://github.com/replicate/replicate-python), 918 ★, 1.0.7 |
 | **[Black Forest Labs API](#7-black-forest-labs-api)** | Yes | [check](https://docs.bfl.ai/quick_start/pricing) | FLUX image and video models | [pricing](https://docs.bfl.ai/quick_start/pricing) | n/a |
 | **[Leonardo AI](#8-leonardo-ai)** | Yes | [check](https://docs.leonardo.ai/docs/payg-guide) | Image generation, including your own custom models | [pricing](https://docs.leonardo.ai/docs/payg-guide) | [Leonardo-Interactive/leonardo-python-sdk](https://github.com/Leonardo-Interactive/leonardo-python-sdk), 26 ★, v7.0.0 |
 <!-- DATA-TABLE:END -->

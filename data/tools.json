@@ -1,7 +1,7 @@
 {
   "keyword": "batch image generation api",
   "title": "Batch Image Generation API Options: 8 Providers on Batch and Webhooks",
-  "lastChecked": "2026-11-09",
+  "lastChecked": "2026-11-16",
   "capabilityChecks": [
     {
       "key": "manyImagesInOneRequest",
@@ -102,11 +102,11 @@
         "officialSdk": true
       },
       "live": {
-        "stars": 32093,
-        "lastPush": "2026-11-09T16:12:57Z",
-        "latestRelease": "v3.48.0",
-        "latestReleaseDate": "2026-11-09",
-        "checkedAt": "2026-11-09"
+        "stars": 32175,
+        "lastPush": "2026-11-16T12:41:06Z",
+        "latestRelease": "v3.51.0",
+        "latestReleaseDate": "2026-11-13",
+        "checkedAt": "2026-11-16"
       }
     },
     {
@@ -139,11 +139,11 @@
         "officialSdk": true
       },
       "live": {
-        "stars": 4058,
-        "lastPush": "2026-11-08T20:32:42Z",
-        "latestRelease": "v3.0.0",
-        "latestReleaseDate": "2026-11-06",
-        "checkedAt": "2026-11-09"
+        "stars": 4075,
+        "lastPush": "2026-11-16T15:51:07Z",
+        "latestRelease": "v3.3.0",
+        "latestReleaseDate": "2026-11-12",
+        "checkedAt": "2026-11-16"
       }
     },
     {
@@ -177,10 +177,10 @@
       },
       "live": {
         "stars": 3,
-        "lastPush": "2026-11-05T17:38:02Z",
+        "lastPush": "2026-11-13T22:09:40Z",
         "latestRelease": null,
         "latestReleaseDate": null,
-        "checkedAt": "2026-11-09"
+        "checkedAt": "2026-11-16"
       }
     },
     {
@@ -214,10 +214,10 @@
       },
       "live": {
         "stars": 189,
-        "lastPush": "2026-11-07T08:31:01Z",
+        "lastPush": "2026-11-14T08:46:04Z",
         "latestRelease": "client-v1.10.1",
         "latestReleaseDate": "2026-05-04",
-        "checkedAt": "2026-11-09"
+        "checkedAt": "2026-11-16"
       }
     },
     {
@@ -250,11 +250,11 @@
         "officialSdk": true
       },
       "live": {
-        "stars": 918,
+        "stars": 919,
         "lastPush": "2025-08-26T17:18:17Z",
         "latestRelease": "1.0.7",
         "latestReleaseDate": "2025-05-27",
-        "checkedAt": "2026-11-09"
+        "checkedAt": "2026-11-16"
       }
     },
     {
@@ -325,10 +325,10 @@
       },
       "live": {
         "stars": 26,
-        "lastPush": "2026-08-04T00:43:49Z",
+        "lastPush": "2026-11-09T22:08:05Z",
         "latestRelease": "v7.0.0",
         "latestReleaseDate": "2026-02-05",
-        "checkedAt": "2026-11-09"
+        "checkedAt": "2026-11-16"
       }
     }
   ]
